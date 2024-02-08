@@ -18,4 +18,12 @@ INFO:openai._base_client:Retrying request to /embeddings in 6.511309 seconds
 Retrying request to /embeddings in 6.511309 seconds
 ```
 
+explanation: Seems to be broken sometimes when using the storage persist, not too sure 
+
 fix: 
+
+```
+RuntimeError: "LayerNormKernelImpl" not implemented for 'Half'
+```
+
+fix: model_kwargs={"torch_dtype": torch.float16} should not be set

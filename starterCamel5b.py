@@ -31,10 +31,7 @@ query_wrapper_prompt = PromptTemplate(
 llm = HuggingFaceLLM(
     context_window=2048,
     max_new_tokens=256,
-    # temperature regulates the randomness, or creativity, of the AI’s responses.
-    # A higher temperature value typically makes the output more diverse and creative 
-    # but might also increase its likelihood of straying from the context. 
-    generate_kwargs={"temperature": 0.25, "do_sample": False},
+    generate_kwargs={"temperature": 2, "do_sample": False},
     query_wrapper_prompt=query_wrapper_prompt,
     tokenizer_name="Writer/camel-5b-hf",
     model_name="Writer/camel-5b-hf",
@@ -48,17 +45,20 @@ llm = HuggingFaceLLM(
 service_context = ServiceContext.from_defaults(chunk_size=512, llm=llm, embed_model="local")
 
 # check if storage already exists
-PERSIST_DIR = "./storage"
-if not os.path.exists(PERSIST_DIR):
-    # load the documents and create the index
-    documents = SimpleDirectoryReader("data").load_data()
-    index = VectorStoreIndex.from_documents(documents, service_context=service_context, show_progess=True)
-    # store it for later
-    index.storage_context.persist(persist_dir=PERSIST_DIR)
-else:
-    # load the existing index
-    storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
-    index = load_index_from_storage(storage_context)
+# PERSIST_DIR = "./storage"
+# if not os.path.exists(PERSIST_DIR):
+#     # load the documents and create the index
+#     documents = SimpleDirectoryReader("data").load_data()
+#     index = VectorStoreIndex.from_documents(documents, service_context=service_context, show_progess=True)
+#     # store it for later
+#     index.storage_context.persist(persist_dir=PERSIST_DIR)
+# else:
+#     # load the existing index
+#     storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
+#     index = load_index_from_storage(storage_context)
+
+documents = SimpleDirectoryReader("data").load_data()
+index = VectorStoreIndex.from_documents(documents, service_context=service_context, show_progess=True)
 
 # set Logging to DEBUG for more detailed outputs
 query_engine = index.as_query_engine(logging="DEBUG")
