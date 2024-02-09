@@ -1,0 +1,18 @@
+temp,chunk_size,execution_time,results
+0.25,512,14:56,consistent
+0.5,512,11:28,consistent
+0.75,512,15:21,consistent
+1.0,512,11:52,consistent
+2.0,512,13:04,consistent
+1.0,1024,DNF,
+1.0,256,17:35,divergent
+0.5,256,15:47,divergent
+0.25,256,16:47,divergent
+1.0,128,ERROR,
+1.0,200,16:31,"divergent, less specific"
+1.0,128,ERROR,
+2.0,200,15:57,"divergent, less specific"
+3.0,200,15:57,"divergent, less specific"
+4.0,200,15:36,"divergent, less specific"
+4.0,512,,
+,,,
