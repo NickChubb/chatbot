@@ -1,12 +1,19 @@
-import os.path
-from llama_index.core import (
+import os
+from llama_index import (
     VectorStoreIndex,
     SimpleDirectoryReader,
     StorageContext,
     load_index_from_storage,
 )
 
-# /run/secrets/OPENAI_API_KEY
+OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
+if OPENAI_API_KEY is None:
+    secret_file_path = '/run/secrets/OPENAI_API_KEY'
+    
+    if os.path.isfile(secret_file_path):
+        with open(secret_file_path, 'r') as secret_file:
+            OPENAI_API_KEY = secret_file.read().strip()
+            os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
 
 # check if storage already exists
 PERSIST_DIR = "./storage"
@@ -24,5 +31,5 @@ else:
 def query(message):
     query_engine = index.as_query_engine()
     response = query_engine.query(message)
-    return response
+    return str(response)
 
