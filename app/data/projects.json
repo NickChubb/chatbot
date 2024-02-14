@@ -1,0 +1,140 @@
+[
+  {
+    "title": "Communities",
+    "display": true,
+    "summary": "Social Network built on a Blockchain Backend",
+    "technologies": "JavaScript, ReactJS, Next.js, MongoDB, Solidity",
+    "description": [
+      "ReactJS front-end for a social network with a backend built on the blockchain",
+      "Access to different user-created communities are controlled by Solidity smart contracts",
+      "Uses MongoDB for the database of community posts",
+      "Currently operational on the Ethereum Sepolia test network (See dropdown menu for link)"
+    ],
+    "links": [
+      {
+        "title": "Github",
+        "url": "https://github.com/NickChubb/Communities"
+      },
+      {
+        "title": "Demo",
+        "url": "https://communities-mocha.vercel.app/"
+      }
+    ],
+    "image": [
+      {
+        "path": "https://user-images.githubusercontent.com/4172020/275337420-f8f09c25-d1ef-4478-a04d-575694b8fcdc.png",
+        "title": "Explore Communities"
+      },
+      {
+        "path": "https://user-images.githubusercontent.com/4172020/274536408-d283b6f0-caea-4ddc-8cc3-d2cfae6a0c0d.png",
+        "title": "Create a new Community"
+      },
+      {
+        "path": "https://user-images.githubusercontent.com/4172020/275337478-4dfbdb74-779b-4a59-b3f3-5d530b6a8fc3.png",
+        "title": "User's page"
+      }
+    ],
+    "icon": "🦄"
+  },
+  {
+    "title": "dockerman",
+    "display": true,
+    "summary": "A React app for controlling and hosting docker containers.",
+    "technologies": "JavaScript, ReactJS, Node.js, Express.js, Docker, SQL",
+    "description": [
+      "Modular server back-end which utilizes Node.js and Docker to serve containers on the same web domain",
+      "Uses Node.js as the backend to manage routing private and public routes",
+      "Utilizes SQLite3 database to store information about containers, logs, and more",
+      "Log screen shows login history and more for Dockerman app",
+      "Config screen allows users to simply change app configuration parameters"
+    ],
+    "links": [
+      {
+        "title": "Github",
+        "url": "https://github.com/NickChubb/dockerman"
+      }
+    ],
+    "image": [
+      {
+        "path": "https://i.imgur.com/7I1RGFl.png",
+        "title": "Container Control Panel",
+        "description": "Start/Stop/Restart individual containers or all containers. Serve port from container at URL endpoint to quickly host GUI and API apps."
+      },
+      {
+        "path": "https://i.imgur.com/TDxDVSc.png",
+        "title": "Config Screen",
+        "description": "Change configuration options and manage security features."
+      },
+      {
+        "path": "https://i.imgur.com/E3zizY1.png",
+        "title": "Log Screen",
+        "description": "View logs from the database of performed actions, login requests, and more."
+      }
+    ],
+    "icon": "🐳"
+  },
+  {
+    "title": "hawking",
+    "display": true,
+    "summary": "The SFU Science Discord Multi-purpose Bot.",
+    "technologies": "JavaScript, ReactJS, Node.js, Express.js, SQL",
+    "description": [
+      "Discord bot built with Discord.js API and React to solve multiple needs for Science Undergraduate Society",
+      "React control-panel utilizes SQL to allow users to easily manage the database of events at Simon Fraser University",
+      "Uses GIPHY SDK to get gifs in response to user query"
+    ],
+    "links": [
+      {
+        "title": "Github",
+        "url": "https://github.com/NickChubb/hawking"
+      }
+    ],
+    "image": [
+      {
+        "path": "https://i.imgur.com/cG6rfkp.png",
+        "title": "",
+        "description": ""
+      },
+      {
+        "path": "https://i.imgur.com/UourrNo.png",
+        "title": "",
+        "description": ""
+      },
+      {
+        "path": "https://i.imgur.com/Rt2w2l2.png",
+        "title": "",
+        "description": ""
+      }
+    ],
+    "icon": "🤖"
+  },
+  {
+    "title": "ReversiRust",
+    "display": false,
+    "summary": "A Rust implementation of the popular board game Reversi (Othello), using AI algorithms.",
+    "technologies": "Rust",
+    "description": [
+      "Learned Rust to implement game objects and high-performance AI algorithms from scratch",
+      "AI uses Monte Carlo Tree Search algorithm with two different heuristics for multiple bot difficulties",
+      "Created for Artificial Intelligence Survey (CMPT 310) final project - Final Mark: 18/18"
+    ],
+    "links": [
+      {
+        "title": "Github",
+        "url": "https://github.com/NickChubb/ReversiRust"
+      },
+      {
+        "title": "Crates.io",
+        "url": "https://crates.io/crates/reversi"
+      }
+    ],
+    "image": [
+      {
+        "path": "https://github.com/NickChubb/ReversiRust/raw/master/game_example.gif",
+        "title": "",
+        "description": ""
+      }
+    ],
+    "icon": "🦀"
+  }
+]

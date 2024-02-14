@@ -1,0 +1,11 @@
+flask
+flask-cors
+meson
+importlib-metadata
+subprocess.run
+wheel
+setuptools
+toml
+numpy
+setuptools-metadata
+llama_index
