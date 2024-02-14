@@ -1,7 +1,0 @@
-Hi, my name is Nick and I am a recent graduate from Simon Fraser University with a BSc in Computer Science and Molecular Biology.
-
-Over the last several years, I have worked internships and contract positions in the software industry which have helped me develop strong front-end coding skills, primarily using TypeScript, React, Next.js, HTML, and CSS. Before this, I had an internship as a Quality Assurance Engineer where I developed a strong foundation in Java.
-
-I frequently engage myself in personal projects to practice my software development skills. I consider myself a lifelong learner and I am always excited at the opportunity to learn new languages or frameworks. Currently, I am enrolled in an online Back-End Engineering course to refine the back-end skills I have developed over years of personal projects for a professional workplace. In this course, I have been working with JavaScript, Express, and PostgreSQL to build scalable and robust backend infrastructure.
-
-Beyond my studies, I have been deeply involved in student politics as an executive member of several different student unions, including President of the Science Undergraduate Society and Applied Science Representative for the Simon Fraser Student Society. These experiences have allowed me to develop strong leadership and communication skills, which I believe will serve me well in my future career as a software engineer.
