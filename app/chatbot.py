@@ -1,4 +1,5 @@
 import os
+# Set to llama_index.core when running locally
 from llama_index import (
     VectorStoreIndex,
     SimpleDirectoryReader,

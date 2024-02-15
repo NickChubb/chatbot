@@ -1,5 +1,6 @@
 flask
 flask-cors
+pypdf
 meson
 importlib-metadata
 subprocess.run
