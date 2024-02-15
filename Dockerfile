@@ -7,6 +7,7 @@ WORKDIR /app
 COPY ./app /app
 RUN pip3 install --no-cache-dir -r requirements.txt
 
+EXPOSE  8080
 
 ENTRYPOINT ["python3"]
 CMD ["app.py"]
