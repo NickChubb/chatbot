@@ -1,8 +1,10 @@
 from flask import Flask, request
+from flask_cors import cross_origin
 import chatbot
 app = Flask(__name__)
 
 @app.route('/')
+@cross_origin(['https://nickchubb.ca', 'https://nchubb.ca'])
 def chatbot_api():
 	message = request.args.get('message')
 	if not message:
