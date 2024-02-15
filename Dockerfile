@@ -1,5 +1,4 @@
-# syntax=docker/dockerfile:1.4
-FROM --platform=$BUILDPLATFORM python:3 AS builder
+FROM python:3 AS builder
 
 WORKDIR /app
 
