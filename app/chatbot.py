@@ -17,7 +17,7 @@ if OPENAI_API_KEY is None:
             OPENAI_API_KEY = secret_file.read().strip()
             os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
 
-llm = OpenAI(temperature=2)
+llm = OpenAI(temperature=1)
 
 # check if storage already exists
 PERSIST_DIR = "./storage"
