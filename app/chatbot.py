@@ -19,7 +19,7 @@ if OPENAI_API_KEY is None:
             os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
 
 llm = OpenAI(temperature=2)
-service_context = ServiceContext.from_defaults(llm=llm)
+service_context = ServiceContext.from_defaults(chunk_size=256, llm=llm)
 
 # check if storage already exists
 PERSIST_DIR = "./storage"
