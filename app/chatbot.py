@@ -5,8 +5,8 @@ from llama_index import (
     SimpleDirectoryReader,
     StorageContext,
     load_index_from_storage,
-    PromptTemplate
 )
+from llama_index.llms.openai import OpenAI
 
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
 if OPENAI_API_KEY is None:
@@ -22,7 +22,8 @@ PERSIST_DIR = "./storage"
 if not os.path.exists(PERSIST_DIR):
     # load the documents and create the index
     documents = SimpleDirectoryReader("data").load_data()
-    index = VectorStoreIndex.from_documents(documents)
+    llm = OpenAI(temperature=5)
+    index = VectorStoreIndex.from_documents(documents, llm=llm)
     # store it for later
     index.storage_context.persist(persist_dir=PERSIST_DIR)
 else:
@@ -30,8 +31,11 @@ else:
     storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
     index = load_index_from_storage(storage_context)
 
+query_wrapper = "You are an AI chatbot representing Nick Chubb. \
+    You are to answer the following question in first person, 3 - 4 lines only: "
+
 def query(message):
     query_engine = index.as_chat_engine()
-    response = query_engine.chat("You are an AI chatbot representing Nick Chubb. You are to answer the following question in first person, 3 - 4 lines only: " + message)
+    response = query_engine.chat(query_wrapper + message)
     return str(response)
 
