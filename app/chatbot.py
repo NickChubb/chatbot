@@ -32,9 +32,11 @@ else:
     storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
     index = load_index_from_storage(storage_context)
 
-query_wrapper = "You are to take on the role of Nick Chubb, a full stack developer. \
-    Respond naturally in first person, like a human would respond in a job interview, \
-    3 - 4 lines only: "
+# query_wrapper = "You are to take on the role of Nick Chubb, a full stack developer. \
+#     Respond naturally in first person, like a human would respond in a job interview, \
+#     3 - 4 lines only: "
+
+query_wrapper = ''
 
 def query(message):
     query_engine = index.as_chat_engine()
