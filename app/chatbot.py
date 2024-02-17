@@ -17,7 +17,7 @@ if OPENAI_API_KEY is None:
             OPENAI_API_KEY = secret_file.read().strip()
             os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
 
-llm = OpenAI(temperature=5)
+llm = OpenAI(temperature=2)
 
 # check if storage already exists
 PERSIST_DIR = "./storage"
@@ -32,8 +32,9 @@ else:
     storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
     index = load_index_from_storage(storage_context, llm=llm)
 
-query_wrapper = "You are to answer the following question in \
-    first person as Nick Chubb, a full stack developer, 3 - 4 lines only: "
+query_wrapper = "You are to take on the role of Nick Chubb, a full stack developer. \
+    Respond naturally in first person, like a human would respond in a job interview, \
+    3 - 4 lines only: "
 
 def query(message):
     query_engine = index.as_chat_engine()
