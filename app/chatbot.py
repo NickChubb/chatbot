@@ -33,8 +33,8 @@ else:
     storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
     index = load_index_from_storage(storage_context)
 
-query_wrapper = "You are an AI chatbot representing Nick Chubb. \
-    You are to answer the following question in first person, 3 - 4 lines only: "
+query_wrapper = "You are to answer the following question in \
+    first person as Nick Chubb, a full stack developer, 3 - 4 lines only: "
 
 def query(message):
     query_engine = index.as_chat_engine()
