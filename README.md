@@ -27,11 +27,11 @@ In retrieval-augmented generation, a system combines both. It fetches relevant i
 
 1. **Front-end Text Popup**
 
-- 
+- Made with TypeScript and ReactJS, code can be found 👉 [here](). Uses framer-motion and GSAP to animate the entry of the component into the DOM smoothly. 
 
 2. **Python LlamaIndex Chatbot**
 
-- 
+- The main component of the app, which queries to OpenAI with a request. When the container if first run, the files in the `/app/data` directory are indexed, which are then used on subsequent calls to the API to be searched by ChatGPT. 
 
 3. **Flask Python Webserver -- Containerized**
 
@@ -61,7 +61,13 @@ So, I was left trying to find another option than serverless functions. I recogn
 
 ### Using a database as a Query-Answer Cache to decrease OpenAI API calls:
 
-I decided to use Supabase as my PostreSQL provider, since I am familiar with it from another project. I briefly considered working with a NoSQL database such as MongoDB (which I have worked with before), but I figured that since it was such a simple lookup key -> value lookup table, a simple SQL database would suffice. 
+I decided to use Supabase as my PostreSQL provider, since I am familiar with it from another project. I briefly considered working with a NoSQL database such as MongoDB (which I have worked with before), but I figured that since it was such a simple lookup key -> value lookup table, a simple SQL database would suffice.
+
+### How to persist data? What sort of user authentication?
+
+When a message is sent on the front-end through the text popup, if the client (browser) does not have a `nickchubb-ca-userId` object in LocalStorage saved, a new UUIDv4 is generated, which corresponds to the userId in the backend `users` database. This is used for security to keep a log of all calls to the backend and to prevent users from spamming too much; it allows me to implement a rate limiter. 
+
+The chat array is also saved in LocalStorage to allow quick persistence.
 
 ## Errors
 

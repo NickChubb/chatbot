@@ -30,7 +30,7 @@ else:
     index = load_index_from_storage(storage_context)
 
 def query(message):
-    query_engine = index.as_query_engine()
-    response = query_engine.query(message)
+    query_engine = index.as_chat_engine()
+    response = query_engine.chat(message)
     return str(response)
 
