@@ -17,20 +17,20 @@ if OPENAI_API_KEY is None:
             OPENAI_API_KEY = secret_file.read().strip()
             os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
 
-llm = OpenAI(temperature=0.1)
+# llm = OpenAI(temperature=0.1)
 
 # check if storage already exists
 PERSIST_DIR = "./storage"
 if not os.path.exists(PERSIST_DIR):
     # load the documents and create the index
     documents = SimpleDirectoryReader("data").load_data()
-    index = VectorStoreIndex.from_documents(documents, llm=llm)
+    index = VectorStoreIndex.from_documents(documents)
     # store it for later
     index.storage_context.persist(persist_dir=PERSIST_DIR)
 else:
     # load the existing index
     storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
-    index = load_index_from_storage(storage_context, llm=llm)
+    index = load_index_from_storage(storage_context)
 
 query_wrapper = "You are to take on the role of Nick Chubb, a full stack developer. \
     Respond naturally in first person, like a human would respond in a job interview, \
