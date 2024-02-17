@@ -29,8 +29,8 @@ if not os.path.exists(PERSIST_DIR):
     index.storage_context.persist(persist_dir=PERSIST_DIR)
 else:
     # load the existing index
-    storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR, llm=llm)
-    index = load_index_from_storage(storage_context)
+    storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
+    index = load_index_from_storage(storage_context, llm=llm)
 
 query_wrapper = "You are an AI chatbot representing Nick Chubb. \
     You are to answer the following question in first person, 3 - 4 lines only: "
