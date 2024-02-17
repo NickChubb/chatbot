@@ -5,6 +5,7 @@ from llama_index import (
     SimpleDirectoryReader,
     StorageContext,
     load_index_from_storage,
+    PromptTemplate
 )
 
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
@@ -31,6 +32,6 @@ else:
 
 def query(message):
     query_engine = index.as_chat_engine()
-    response = query_engine.chat(message)
+    response = query_engine.chat("You are an AI chatbot representing Nick Chubb. You are to answer the following question in first person, 3 - 4 lines only: " + message)
     return str(response)
 
