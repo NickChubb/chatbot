@@ -18,7 +18,7 @@ if OPENAI_API_KEY is None:
             OPENAI_API_KEY = secret_file.read().strip()
             os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
 
-llm = OpenAI(temperature=5)
+llm = OpenAI(temperature=2)
 service_context = ServiceContext.from_defaults(llm=llm)
 
 # check if storage already exists
