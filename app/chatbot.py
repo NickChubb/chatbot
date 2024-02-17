@@ -4,8 +4,7 @@ from llama_index import (
     VectorStoreIndex,
     SimpleDirectoryReader,
     StorageContext,
-    load_index_from_storage,
-    ServiceContext
+    load_index_from_storage
 )
 from llama_index.llms.openai import OpenAI
 
@@ -18,21 +17,20 @@ if OPENAI_API_KEY is None:
             OPENAI_API_KEY = secret_file.read().strip()
             os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
 
-llm = OpenAI(temperature=2)
-service_context = ServiceContext.from_defaults(chunk_size=256, llm=llm)
+llm = OpenAI(temperature=5)
 
 # check if storage already exists
 PERSIST_DIR = "./storage"
 if not os.path.exists(PERSIST_DIR):
     # load the documents and create the index
     documents = SimpleDirectoryReader("data").load_data()
-    index = VectorStoreIndex.from_documents(documents, service_context=service_context)
+    index = VectorStoreIndex.from_documents(documents, llm=llm)
     # store it for later
     index.storage_context.persist(persist_dir=PERSIST_DIR)
 else:
     # load the existing index
     storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
-    index = load_index_from_storage(storage_context, service_context=service_context)
+    index = load_index_from_storage(storage_context, llm=llm)
 
 query_wrapper = "You are to answer the following question in \
     first person as Nick Chubb, a full stack developer, 3 - 4 lines only: "
