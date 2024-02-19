@@ -20,7 +20,7 @@ def chatbot_api():
                 CHATBOT_API_SECRET = secret_file.read().strip()
                 os.environ['CHATBOT_API_SECRET'] = CHATBOT_API_SECRET
 
-    hashedSecret = sha256(CHATBOT_API_SECRET).hexdigest()
+    hashedSecret = sha256(CHATBOT_API_SECRET.encode('utf-8')).hexdigest()
     if secret != hashedSecret:
         return "Incorrect secret supplied."
 
