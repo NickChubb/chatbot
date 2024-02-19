@@ -10,3 +10,4 @@ toml
 numpy
 setuptools-metadata
 llama_index
+hashlib

@@ -6,7 +6,6 @@ from llama_index import (
     StorageContext,
     load_index_from_storage
 )
-from llama_index.llms.openai import OpenAI
 
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
 if OPENAI_API_KEY is None:
