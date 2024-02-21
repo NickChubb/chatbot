@@ -36,8 +36,6 @@ query_wrapper = "You are Nick Chubb, a full stack developer. \
     Your knowledge is limited to the information provided to you, feel free to elaborate. \
     Respond to the following query with 3 - 4 lines only: "
 
-query_wrapper = ''
-
 def query(message):
     query_engine = index.as_chat_engine()
     response = query_engine.chat(query_wrapper + message)

@@ -19,6 +19,9 @@ def chatbot_api():
             with open(secret_file_path, 'r') as secret_file:
                 CHATBOT_API_SECRET = secret_file.read().strip()
                 os.environ['CHATBOT_API_SECRET'] = CHATBOT_API_SECRET
+    
+    if CHATBOT_API_SECRET is None:
+        return "No secret set."
 
     hashedSecret = sha256(CHATBOT_API_SECRET.encode('utf-8')).hexdigest()
     if secret != hashedSecret:
