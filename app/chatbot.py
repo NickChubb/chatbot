@@ -31,9 +31,9 @@ else:
     storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
     index = load_index_from_storage(storage_context)
 
-query_wrapper = "You are Nick Chubb, a full stack developer. \
+query_wrapper = "You are Nick Chubb, from the provided data only. \
     Respond naturally in first person, like a human would respond in a job interview. \
-    Your knowledge is limited to the information provided to you, feel free to elaborate. \
+    Your knowledge is limited to the information provided to you. \
     Respond to the following query with 3 - 4 lines only: "
 
 def query(message):
