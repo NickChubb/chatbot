@@ -7,34 +7,63 @@
     "description": [
       "ReactJS front-end for a social network with a backend built on the blockchain",
       "Access to different user-created communities are controlled by Solidity smart contracts",
-      "Uses MongoDB for the database of community posts",
-      "Currently operational on the Ethereum Sepolia test network (See dropdown menu for link)"
+      "Uses MongoDB for database of community posts",
+      "Currenly operational on the Ethereum Sepolia testnetwork (See dropdown meu for link)"
     ],
     "links": [
       {
         "title": "Github",
-        "url": "https://github.com/NickChubb/Communities"
+        "url": "https://github.com/NickChubb/Communities",
+        "Icon": "<FaGithub />"
       },
       {
         "title": "Demo",
-        "url": "https://communities-mocha.vercel.app/"
+        "url": "https://communities-mocha.vercel.app/",
+        "Icon": "<RiComputerLine />"
       }
     ],
     "image": [
       {
-        "path": "https://user-images.githubusercontent.com/4172020/275337420-f8f09c25-d1ef-4478-a04d-575694b8fcdc.png",
+        "path": "/img/projects/communities-1.png",
         "title": "Explore Communities"
       },
       {
-        "path": "https://user-images.githubusercontent.com/4172020/274536408-d283b6f0-caea-4ddc-8cc3-d2cfae6a0c0d.png",
+        "path": "/img/projects/communities-2.png",
         "title": "Create a new Community"
       },
       {
-        "path": "https://user-images.githubusercontent.com/4172020/275337478-4dfbdb74-779b-4a59-b3f3-5d530b6a8fc3.png",
+        "path": "/img/projects/communities-3.png",
         "title": "User's page"
       }
     ],
     "icon": "🦄"
+  },
+  {
+    "title": "Chatbot",
+    "display": true,
+    "summary": "Python Bot with OpenAI API to ask questions about me with my own data",
+    "technologies": "TypeScript, Python, ReactJs, PostgreSQL, Docker",
+    "description": [
+      "Uses Python Retrieval-Augmented Generation (RAG) library LlamaIndex",
+      "Dockerized Python Flask server hosted on GCP Cloud Run for scalability and maintainability",
+      "User cookie authentication and rate-limiting by integration with PostgreSQL database",
+      "CORS enabled and shared secret authorization allows only API calls from frontend to chatbot API"
+    ],
+    "links": [
+      {
+        "title": "Github",
+        "url": "https://github.com/NickChubb/chatbot",
+        "Icon": "<FaGithub />"
+      }
+    ],
+    "image": [
+      {
+        "path": "/img/projects/chatbot-1.png",
+        "title": "React Popup Chat Window",
+        "description": "Start/Stop/Restart individual containers or all containers.  Serve port from container at URL endpoint to quickly host GUI and API apps."
+      }
+    ],
+    "icon": "✨"
   },
   {
     "title": "dockerman",
@@ -45,30 +74,30 @@
       "Modular server back-end which utilizes Node.js and Docker to serve containers on the same web domain",
       "Uses Node.js as the backend to manage routing private and public routes",
       "Utilizes SQLite3 database to store information about containers, logs, and more",
-      "Log screen shows login history and more for Dockerman app",
       "Config screen allows users to simply change app configuration parameters"
     ],
     "links": [
       {
         "title": "Github",
-        "url": "https://github.com/NickChubb/dockerman"
+        "url": "https://github.com/NickChubb/dockerman",
+        "Icon": "<FaGithub />"
       }
     ],
     "image": [
       {
-        "path": "https://i.imgur.com/7I1RGFl.png",
+        "path": "/img/projects/dockerman-1.png",
         "title": "Container Control Panel",
-        "description": "Start/Stop/Restart individual containers or all containers. Serve port from container at URL endpoint to quickly host GUI and API apps."
+        "description": "Start/Stop/Restart individual containers or all containers.  Serve port from container at URL endpoint to quickly host GUI and API apps."
       },
       {
-        "path": "https://i.imgur.com/TDxDVSc.png",
+        "path": "/img/projects/dockerman-2.png",
         "title": "Config Screen",
         "description": "Change configuration options and manage security features."
       },
       {
-        "path": "https://i.imgur.com/E3zizY1.png",
+        "path": "/img/projects/dockerman-3.png",
         "title": "Log Screen",
-        "description": "View logs from the database of performed actions, login requests, and more."
+        "description": "View logs from database of performed actions, login requests, and more."
       }
     ],
     "icon": "🐳"
@@ -80,30 +109,29 @@
     "technologies": "JavaScript, ReactJS, Node.js, Express.js, SQL",
     "description": [
       "Discord bot built with Discord.js API and React to solve multiple needs for Science Undergraduate Society",
-      "React control-panel utilizes SQL to allow users to easily manage the database of events at Simon Fraser University",
+      "Node.js and Express.js backend integrates with SQLite3 database",
+      "React control-panel utilizes SQL to allow users to easily manage database of events at Simon Fraser University",
       "Uses GIPHY SDK to get gifs in response to user query"
     ],
     "links": [
       {
         "title": "Github",
-        "url": "https://github.com/NickChubb/hawking"
+        "url": "https://github.com/NickChubb/hawking",
+        "Icon": "<FaGithub />"
       }
     ],
     "image": [
       {
-        "path": "https://i.imgur.com/cG6rfkp.png",
-        "title": "",
-        "description": ""
+        "path": "/img/projects/hawking-1.png",
+        "title": ""
       },
       {
-        "path": "https://i.imgur.com/UourrNo.png",
-        "title": "",
-        "description": ""
+        "path": "/img/projects/hawking-2.png",
+        "title": ""
       },
       {
-        "path": "https://i.imgur.com/Rt2w2l2.png",
-        "title": "",
-        "description": ""
+        "path": "/img/projects/hawking-3.png",
+        "title": ""
       }
     ],
     "icon": "🤖"
@@ -114,14 +142,15 @@
     "summary": "A Rust implementation of the popular board game Reversi (Othello), using AI algorithms.",
     "technologies": "Rust",
     "description": [
-      "Learned Rust to implement game objects and high-performance AI algorithms from scratch",
+      "Learned Rust to implement game objects and high performance AI algorithms from scratch",
       "AI uses Monte Carlo Tree Search algorithm with two different heuristics for multiple bot difficulties",
-      "Created for Artificial Intelligence Survey (CMPT 310) final project - Final Mark: 18/18"
+      "Created for Artifical Intelligence Survey (CMPT 310) final project - Final Mark: 18/18"
     ],
     "links": [
       {
         "title": "Github",
-        "url": "https://github.com/NickChubb/ReversiRust"
+        "url": "https://github.com/NickChubb/ReversiRust",
+        "Icon": "<FaGithub />"
       },
       {
         "title": "Crates.io",
@@ -131,8 +160,7 @@
     "image": [
       {
         "path": "https://github.com/NickChubb/ReversiRust/raw/master/game_example.gif",
-        "title": "",
-        "description": ""
+        "title": ""
       }
     ],
     "icon": "🦀"
