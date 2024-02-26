@@ -23,6 +23,8 @@ In retrieval-augmented generation, a system combines both. It fetches relevant i
 
 ## Features 🛠️
 
+![Chatbot Frontend Window](./chatbot-frontend.png)
+
 ![Architecture Diagram](./chatbot-architecture.png)
 
 1. **Front-end Text Popup**
