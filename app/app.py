@@ -1,35 +1,26 @@
-import os
 from flask import Flask, request
 import chatbot
-from hashlib import sha256
+import generator
+from auth import auth_middleware
 
 app = Flask(__name__)
 
-@app.route("/")
+app.wsgi_app = auth_middleware(app.wsgi_app)
+
+@app.route("/chatbot")
 def chatbot_api():
-    # API Authentication by hashed shared secret
-    secret = request.args.get("secret")
-    if not secret:
-        return "No secret supplied."
-
-    CHATBOT_API_SECRET = os.environ.get("CHATBOT_API_SECRET")
-    if CHATBOT_API_SECRET is None:
-        secret_file_path = '/run/secrets/CHATBOT_API_SECRET'
-        if os.path.isfile(secret_file_path):
-            with open(secret_file_path, 'r') as secret_file:
-                CHATBOT_API_SECRET = secret_file.read().strip()
-                os.environ['CHATBOT_API_SECRET'] = CHATBOT_API_SECRET
-
-    hashedSecret = sha256(CHATBOT_API_SECRET.encode('utf-8')).hexdigest()
-    if secret != hashedSecret:
-        return "Incorrect secret supplied."
-
     # Call Chatbot to query OpenAI
-    message = request.args.get("message")
-    if not message:
-        return "Message query string must not be empty."
-    return chatbot.query(message)
+    query = request.args.get("query")
+    if not query:
+        return "Query must not be null."
+    return chatbot.query(query)
 
+@app.route("/generator")
+def generator_api():
+    query = request.args.get("query")
+    if not query:
+        return "Query must not be empty."
+    return chatbot.generate(query)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)

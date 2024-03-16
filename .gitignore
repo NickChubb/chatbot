@@ -5,5 +5,5 @@
 /app/venv
 /app/__pycache__
 .env
-openai_api_key.env
+*.env
 .DS_Store

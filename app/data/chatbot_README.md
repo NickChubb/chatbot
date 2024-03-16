@@ -10,7 +10,7 @@ API for my AI Chatbot on my website. Includes Dockerized Python Flask server and
 Retrieval-augmented generation is a mix of two types of AI models.
 
 1. **Retrieval-based models:** These fetch information from a database.
-
+laob
 2. **Generative models:** These create new content.
 
 In retrieval-augmented generation, a system combines both. It fetches relevant information from a database using a retrieval model and then uses a generative model to create responses. This helps in generating more accurate and meaningful content by using existing knowledge.
